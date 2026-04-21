@@ -1,36 +1,67 @@
-.add{
-    width: 70%;
-    margin-left: max(5vw, 25px);
-    margin-top: 50px;
+.add {
+    width: 100%;
+    max-width: 600px;   
+    margin: 50px auto; 
+    padding: 0 15px;    
     color: #6d6d6d;
     font-size: 16px;
 }
 .add form {
-  gap: 20px;
-}
-.add-img-upload img{
-    width: 120px;
-}
-.add-product-name, .add-product-description{
-    width: max(40%,280px);
-}
-.add-product-name input, .add-product-description textarea{
-    padding: 10px;
-}
-.add-category-price{
     display: flex;
-    gap: 30px;
+    flex-direction: column;
+    gap: 20px;
 }
-.add-category-price select, .add-category-price input{
+.add-product-name,
+.add-product-description {
+    width: 100%;
+}
+
+.add-product-name input,
+.add-product-description textarea {
+    width: 100%;
     padding: 10px;
-    width: max(40%,198px);
 }
-.add-btn{
-    max-width: 150px;
-    padding: 10px 20px;
-    background-color:tomato;
+.add-category-price {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;   
+}
+
+.add-category,
+.add-price {
+    flex: 1;          
+    min-width: 150px;  
+}
+
+.add-category-price select,
+.add-category-price input {
+    width: 100%;
+    padding: 10px;
+}
+.add-img-upload img {
+    width: 100%;
+    max-width: 120px;
+}
+.add-btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    background-color: tomato;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+@media (max-width: 600px) {
+    .add {
+        font-size: 14px;
+    }
+
+    .add-category-price {
+        flex-direction: column;  
+    }
+
+    .add-btn {
+        width: 100%;
+    }
 }

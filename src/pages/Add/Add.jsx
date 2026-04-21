@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import "./Add.css";
 import { assets } from "../../assets/assets";
-import axios from "axios";  
+import axios from "axios";
 import { toast } from "react-toastify";
 
-
-const Add = () => {
-
-    const url = "http://localhost:4000";
-
+const Add = ({ url }) => {
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
     name: "",
@@ -26,7 +22,7 @@ const Add = () => {
     }));
   };
 
-  const onSubmitHandler = async(event) => {
+  const onSubmitHandler = async (event) => {
     event.preventDefault();
     const formData = new FormData();
     formData.append("image", image);
@@ -35,21 +31,19 @@ const Add = () => {
     formData.append("price", Number(data.price));
     formData.append("category", data.category);
     const responce = await axios.post(`${url}/api/food/add`, formData);
-    if(responce.data.success){
-        setData({
-            name: "",
-            description: "",
-            price: "",
-            category: "Cake",
-          });
-          setImage(false);
-          toast.success(responce.data.message);
-    }else{
-        toast.error(responce.data.message);
+    if (responce.data.success) {
+      setData({
+        name: "",
+        description: "",
+        price: "",
+        category: "Cake",
+      });
+      setImage(false);
+      toast.success(responce.data.message);
+    } else {
+      toast.error(responce.data.message);
     }
-  }
-
-
+  };
 
   return (
     <div className="add">
