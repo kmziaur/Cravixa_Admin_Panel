@@ -8,8 +8,8 @@
     font-size: 13px;
 }
 .list.add {
-    width: 100%;
-    max-width: none;
+    width: 80%;
+    max-width: 80%;
     margin: 40px;
     padding: 0;
 }
