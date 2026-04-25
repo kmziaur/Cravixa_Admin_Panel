@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const List = ({ url }) => {
-  
+
   const [list, setList] = useState([]);
 
   const fetchList = async () => {
@@ -32,7 +32,7 @@ const List = ({ url }) => {
   }, []);
   return (
     <div className="list add flex-col">
-      <p>All Foods List</p>
+      <p>All Food List</p>
       <div className="list-table">
         <div className="list-table-format title">
           <b>Image</b>
