@@ -52,6 +52,20 @@
     border-radius: 5px;
     cursor: pointer;
 }
+@media (max-width: 900px) {
+    .add {
+        margin-left: 18%;
+        font-size: 14px;
+    }
+
+    .add-category-price {
+        flex-direction: column;  
+    }
+
+    .add-btn {
+        width: 100%;
+    }
+}
 @media (max-width: 600px) {
     .add {
         font-size: 14px;
